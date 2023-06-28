@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65B665D12A4C070F00878623 /* CandiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B665D02A4C070F00878623 /* CandiesModel.swift */; };
 		6E25AA702A41CA2A00001221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E25AA6F2A41CA2A00001221 /* AppDelegate.swift */; };
 		6E25AA722A41CA2A00001221 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E25AA712A41CA2A00001221 /* SceneDelegate.swift */; };
-		6E25AA742A41CA2A00001221 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E25AA732A41CA2A00001221 /* ViewController.swift */; };
+		6E25AA742A41CA2A00001221 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E25AA732A41CA2A00001221 /* ListViewController.swift */; };
 		6E25AA772A41CA2A00001221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E25AA752A41CA2A00001221 /* Main.storyboard */; };
 		6E25AA792A41CA2B00001221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E25AA782A41CA2B00001221 /* Assets.xcassets */; };
 		6E25AA7C2A41CA2B00001221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E25AA7A2A41CA2B00001221 /* LaunchScreen.storyboard */; };
@@ -17,10 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65B665D02A4C070F00878623 /* CandiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandiesModel.swift; sourceTree = "<group>"; };
 		6E25AA6C2A41CA2A00001221 /* Project6-CandySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project6-CandySearch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E25AA6F2A41CA2A00001221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E25AA712A41CA2A00001221 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6E25AA732A41CA2A00001221 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E25AA732A41CA2A00001221 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		6E25AA762A41CA2A00001221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E25AA782A41CA2B00001221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E25AA7B2A41CA2B00001221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +41,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65B665C92A4C064E00878623 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E25AA782A41CA2B00001221 /* Assets.xcassets */,
+				6E25AA872A4364FA00001221 /* candies.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		65B665CB2A4C068A00878623 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6E25AA7D2A41CA2B00001221 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		65B665CC2A4C06B800878623 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				65B665CF2A4C06D900878623 /* Controllers */,
+				65B665CE2A4C06D300878623 /* Models */,
+				65B665CD2A4C06CA00878623 /* Views */,
+				6E25AA6F2A41CA2A00001221 /* AppDelegate.swift */,
+				6E25AA712A41CA2A00001221 /* SceneDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		65B665CD2A4C06CA00878623 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E25AA752A41CA2A00001221 /* Main.storyboard */,
+				6E25AA7A2A41CA2B00001221 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		65B665CE2A4C06D300878623 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65B665D02A4C070F00878623 /* CandiesModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		65B665CF2A4C06D900878623 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6E25AA732A41CA2A00001221 /* ListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		6E25AA632A41CA2A00001221 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +114,9 @@
 		6E25AA6E2A41CA2A00001221 /* Project6-CandySearch */ = {
 			isa = PBXGroup;
 			children = (
-				6E25AA872A4364FA00001221 /* candies.json */,
-				6E25AA6F2A41CA2A00001221 /* AppDelegate.swift */,
-				6E25AA712A41CA2A00001221 /* SceneDelegate.swift */,
-				6E25AA732A41CA2A00001221 /* ViewController.swift */,
-				6E25AA752A41CA2A00001221 /* Main.storyboard */,
-				6E25AA782A41CA2B00001221 /* Assets.xcassets */,
-				6E25AA7A2A41CA2B00001221 /* LaunchScreen.storyboard */,
-				6E25AA7D2A41CA2B00001221 /* Info.plist */,
+				65B665CC2A4C06B800878623 /* Sources */,
+				65B665CB2A4C068A00878623 /* SupportingFiles */,
+				65B665C92A4C064E00878623 /* Resources */,
 			);
 			path = "Project6-CandySearch";
 			sourceTree = "<group>";
@@ -142,7 +193,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E25AA742A41CA2A00001221 /* ViewController.swift in Sources */,
+				6E25AA742A41CA2A00001221 /* ListViewController.swift in Sources */,
+				65B665D12A4C070F00878623 /* CandiesModel.swift in Sources */,
 				6E25AA702A41CA2A00001221 /* AppDelegate.swift in Sources */,
 				6E25AA722A41CA2A00001221 /* SceneDelegate.swift in Sources */,
 			);
@@ -292,7 +344,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Project6-CandySearch/Info.plist";
+				INFOPLIST_FILE = "Project6-CandySearch/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -323,7 +375,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Project6-CandySearch/Info.plist";
+				INFOPLIST_FILE = "Project6-CandySearch/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
