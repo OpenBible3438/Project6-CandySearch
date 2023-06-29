@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6568FD7F2A4D45B800A2AF2F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6568FD7E2A4D45B800A2AF2F /* ListTableViewCell.swift */; };
+		6568FD812A4D4DFB00A2AF2F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6568FD802A4D4DFB00A2AF2F /* DetailViewController.swift */; };
 		65B665D12A4C070F00878623 /* CandiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B665D02A4C070F00878623 /* CandiesModel.swift */; };
 		6E25AA702A41CA2A00001221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E25AA6F2A41CA2A00001221 /* AppDelegate.swift */; };
 		6E25AA722A41CA2A00001221 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E25AA712A41CA2A00001221 /* SceneDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6568FD7E2A4D45B800A2AF2F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		6568FD802A4D4DFB00A2AF2F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		65B665D02A4C070F00878623 /* CandiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandiesModel.swift; sourceTree = "<group>"; };
 		6E25AA6C2A41CA2A00001221 /* Project6-CandySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project6-CandySearch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E25AA6F2A41CA2A00001221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			children = (
 				6E25AA752A41CA2A00001221 /* Main.storyboard */,
 				6E25AA7A2A41CA2B00001221 /* LaunchScreen.storyboard */,
+				6568FD7E2A4D45B800A2AF2F /* ListTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				6E25AA732A41CA2A00001221 /* ListViewController.swift */,
+				6568FD802A4D4DFB00A2AF2F /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,7 +202,9 @@
 				6E25AA742A41CA2A00001221 /* ListViewController.swift in Sources */,
 				65B665D12A4C070F00878623 /* CandiesModel.swift in Sources */,
 				6E25AA702A41CA2A00001221 /* AppDelegate.swift in Sources */,
+				6568FD812A4D4DFB00A2AF2F /* DetailViewController.swift in Sources */,
 				6E25AA722A41CA2A00001221 /* SceneDelegate.swift in Sources */,
+				6568FD7F2A4D45B800A2AF2F /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CandiesModel {
+struct CandiesModel: Codable {
     let category: String
     let name: String
 }
