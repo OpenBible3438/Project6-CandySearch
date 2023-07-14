@@ -12,6 +12,7 @@ class ListViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     
     var candies: [CandiesModel]?
+    var filteredCandies: [CandiesModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,10 @@ class ListViewController: UIViewController {
     func setSearchBar() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.scopeButtonTitles = ["All", "Chocolate", "Hard", "Other"]
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     // MARK: - Get candies.json data
@@ -44,6 +48,7 @@ class ListViewController: UIViewController {
         if let data = data,
            let candy = try? JSONDecoder().decode([CandiesModel].self, from: data) {
             candies = candy
+            filteredCandies = candy
         }
         
     }
@@ -56,18 +61,18 @@ class ListViewController: UIViewController {
 
 }
 
-// MARK: - EXTENSION UITableViewDataSource
+// MARK: - EXTENSION UITableViewDataSource, UITableViewDelegate
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return candies?.count ?? 0
+        return filteredCandies?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = listTableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as? ListTableViewCell else {
             return UITableViewCell()
         }
-        cell.candyNameLabel.text = candies?[indexPath.row].name
-        cell.candyTypeLabel.text = candies?[indexPath.row].category
+        cell.candyNameLabel.text = filteredCandies?[indexPath.row].name
+        cell.candyTypeLabel.text = filteredCandies?[indexPath.row].category
         
         return cell
     }
@@ -76,8 +81,37 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
             return
         }
-        detailVC.candyData = candies?[indexPath.row]
+        detailVC.candyData = filteredCandies?[indexPath.row]
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
+}
+
+// MARK: - EXTENSION UISearchResultsUpdating
+extension ListViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    // SearchBar에 검색할 때 호출
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else {
+            return
+        }
+        
+        if searchText.isEmpty {
+            filteredCandies = candies
+            self.listTableView.reloadData()
+            return
+        }
+        
+        filterData(searchText, scope: searchController.searchBar.scopeButtonTitles![searchController.searchBar.selectedScopeButtonIndex])
+    }
+    
+    func filterData(_ searchText: String, scope: String) {
+        filteredCandies = candies?.filter {
+            if !(scope == "All") {
+                return false
+            }
+            return $0.name.localizedCaseInsensitiveContains(searchText)
+        }
+        self.listTableView.reloadData()
+    }
+
 }
